@@ -1,0 +1,36 @@
+TAP-Formatter-Spreadsheet version 0.01
+======================================
+
+This Module provides Excel output with customizable formats for the 
+Test::Harness output. This Module can be use for formatting the test
+results along with creating bar charts or pie charts based on the output
+results both for overall test summary and for individual tests.
+
+This Module is based on TAP::Formatter::Console and TAP::Formatter::Base 
+modules which are part of Core Perl distribution. TAP::Base is used as 
+base class for this implementation. 
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+  Spreadsheet::WriteExcel TAP::Harness TAP::Base
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2011 by Murugesan Kandasamy
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.6.1 or,
+at your option, any later version of Perl 5 you may have available.
+
+
