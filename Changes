@@ -1,5 +1,7 @@
 Revision history for Perl extension TAP::Formatter::Spreadsheet.
 
+0.02 Made changes in Makefile.pl and made font_help def value as comment
+
 0.01  Wed Jan 26 19:21:20 2011
 	- original version; 
 

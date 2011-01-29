@@ -2,7 +2,7 @@ package TAP::Formatter::Spreadsheet::Session;
 
 use base qw( TAP::Base );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 BEGIN {
 

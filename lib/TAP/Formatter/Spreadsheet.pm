@@ -7,7 +7,7 @@ use Data::Dumper;
 use Spreadsheet::WriteExcel;    # Obviously for writing excel
 use Spreadsheet::WriteExcel::Utility qw( xl_range_formula xl_rowcol_to_cell );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 BEGIN {
     our @ISA = qw(TAP::Base);
@@ -253,7 +253,10 @@ sub process {
                 next if ( $res->{type} eq 'unknown' && $res->{raw} eq '' );
 
                 ## Format for sheet but sustained only for result rows
-                my $lsub = "test_" . $res->{font_help} . '_format';
+				unless ($res->{font_help}) {
+					$res->{font_help} = 'comment';
+				}
+				my $lsub = "test_" . $res->{font_help} . '_format';
                 my $bformat =
                   $self->$lsub;    ### Ugly hack to get the proper format
                 my $format = $workbook->add_format(%$bformat);
@@ -471,6 +474,7 @@ distribution. TAP::Base is used as base class for this implementation.
 
 C<filename> is used as accessor for the excel filename where the results are written. The default value is
 C<__example.xls>
+
 $fmt->filename("hi.xls")
 
 =head3 number_of_sheets
@@ -622,9 +626,20 @@ should be a L<TAP::Parser::Aggregator>.
 =head1 SEE ALSO
 
 L<TAP::Formatter::Console> - the default TAP formatter used by L<TAP::Harness>
+
 L<Spreadsheet::WriteExcel> - Module used to write spreadsheet excel 
 
-Murugesan Kandasamy, E<lt>murugu@cpan dot orgE<gt>
+=head1 AUTHOR
+
+Murugesan Kandasamy E<lt>Murugesan.Kandasamy@gmail.comE<gt>
+
+=head1 ACKNOWLDEGEMENT
+
+John Mcnamara - For his contributions towards Spreadsheet::* Module
+
+Steve Purkis  - For his contributions towards TAP::Formatter::* Module
+
+Prasad JP, Sivaraman M, Rajesh S and Murugaperumal R for their contribution towards testing.
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               TAP-Formatter-Spreadsheet
-version:            0.01
+version:            0.02
 abstract:           TAP Formatter which writes to a cross platform Excel file
 author:
     - Murugesan Kandasamy (murugesan.kandasamy@gmail.com)
